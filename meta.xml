@@ -1,0 +1,66 @@
+<meta>
+    <info author="Slothman" version="1.0.2" name="Stealth" type="gamemode"
+        description="Allow scripts to insert a ped that simulates combat with a real player" />
+
+    <script src="util.lua" type="shared" />
+    <script src="gadgets_server.lua" type="server" />
+    <script src="gadgets_client.lua" type="client" />
+    <script src="stealthmain_client.lua" type="client" validate="true" />
+    
+    <map src="base.map" dimension="1" />
+    
+    <file src="riot_shield.col" download="false" />
+    <file src="armor.png" />
+    
+    <include resource="killmessages" />
+    <include resource="maplimits" />
+    
+    <config src="help.xml" type="client" />
+    
+    <export function="exampleExport1" type="server" />
+    <export function="exampleExport2" type="client" />
+    <export function="exampleExport3" type="shared" />
+    
+    <settings>
+        <setting name="roundlimit" value="[6]" /> 
+        <setting name="teamdamage" value="[1]" /> 
+        <setting name="teambalance" value="[1]" /> 
+        <setting name="isAllowedToShoot" value="true" />
+        <setting name="admingroup" value="Admin,AdminPlus"
+            friendlyname="Admin group list"
+            group="_Advanced"
+            accept="*"
+            examples="Admin,Moderator,SuperModerator"
+            desc="To use this resource, the player must belong to one of the groups listed."
+            /> 
+        <setting name="spazammo" value="[25]" /> 
+        <setting name="m4ammo" value="[100]" />
+        <setting name="shotgunammo" value="[25]" />
+        <setting name="sniperammo" value="[20]" />
+        <setting name="ak47ammo" value="[120]" />
+        <setting name="rifleammo" value="[40]" />
+        <setting name="deserteagleammo" value="[45]" />
+        <setting name="pistolammo" value="[132]" />
+        <setting name="uziammo" value="[150]" />
+        <setting name="tec9ammo" value="[150]" />
+        <setting name="silencedammo" value="[65]" />
+        <setting name="grenadeammo" value="[4]" />
+        <setting name="satchelammo" value="[4]" />
+        <setting name="teargasammo" value="[4]" />
+        <setting name="molatovammo" value="[4]" />
+    </settings>
+    
+    <min_mta_version server="1.5.2-9.07903" client="1.5.2-9.07903" />
+
+    <aclrequest>
+        <right name="function.startResource" access="true" />
+        <right name="function.stopResource" access="true" />
+        <right name="function.setPlayerMuted" access="true" />
+    </aclrequest>
+
+    <sync_map_element_data>false</sync_map_element_data>
+
+    <oop>true</oop>
+
+    <download_priority_group>0</download_priority_group>
+</meta>
